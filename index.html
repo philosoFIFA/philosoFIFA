@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>philosoFIFA — Not your usual squad</title>
+  <meta name="description" content="Thinkers, artists and creators repositioned as football players. Street philosophy in FIFA format.">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="logo">
+        <span class="logo-green">philoso</span>FIFA
+      </div>
+      <span class="logo-tagline">Street philosophy in FIFA format</span>
+    </div>
+    <nav class="site-nav">
+      <button class="nav-link active" data-page="roster">Roster</button>
+      <button class="nav-link" data-page="about">About</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     ROSTER PAGE
+     ══════════════════════════════════════════════════════════ -->
+<div id="page-roster" class="page active">
+  <div class="container">
+
+    <!-- List view -->
+    <div id="roster-list">
+      <div class="roster-head">
+        <div>
+          <h1 class="roster-title">Player ratings</h1>
+          <p class="roster-sub">Not your usual squad</p>
+        </div>
+        <input
+          id="search"
+          class="search-input"
+          type="search"
+          placeholder="Search player, position, discipline…"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="table-wrap">
+        <table class="roster-table">
+          <thead>
+            <tr>
+              <th style="width:28px;"></th>
+              <th style="width:26%;">Player</th>
+              <th style="width:76px;" class="center">Years</th>
+              <th style="width:88px;">Discipline</th>
+              <th style="width:46px;" class="center">Pos</th>
+              <th style="width:46px;" class="center green">OVR</th>
+              <th style="width:36px;" class="center">PAC</th>
+              <th style="width:36px;" class="center">SHO</th>
+              <th style="width:36px;" class="center">PAS</th>
+              <th style="width:36px;" class="center">DRI</th>
+              <th style="width:36px;" class="center">DEF</th>
+              <th style="width:36px;" class="center">PHY</th>
+              <th style="width:18px;"></th>
+            </tr>
+          </thead>
+          <tbody id="roster-tbody">
+            <tr>
+              <td colspan="13" style="padding:3rem;text-align:center;font-family:var(--mono);font-size:12px;color:var(--faint);">
+                Loading roster…
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /#roster-list -->
+
+    <!-- Detail view (hidden by default) -->
+    <div id="detail-wrap" style="display:none;">
+
+      <button class="detail-back" onclick="closeDetail()">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        Back to roster
+      </button>
+
+      <div class="detail-grid">
+
+        <!-- Left: card + stats + download -->
+        <div class="card-wrap">
+
+          <div class="player-card">
+            <div class="card-top">
+              <div class="card-ovr" id="d-ovr">—</div>
+              <div class="card-top-right">
+                <div class="card-flag" id="d-flag">—</div>
+                <div class="card-pos-label" id="d-pos">—</div>
+              </div>
+            </div>
+
+            <div class="card-image" id="d-image">
+              <!-- filled by JS -->
+            </div>
+
+            <div class="card-name">
+              <span class="first" id="d-first">—</span>
+              <span class="last"  id="d-last">—</span>
+            </div>
+
+            <div class="card-club" id="d-club">—</div>
+
+            <div class="card-stats" id="d-mini-stats">
+              <!-- filled by JS -->
+            </div>
+          </div><!-- /.player-card -->
+
+          <!-- Stat bars -->
+          <div class="stats-section">
+            <p class="label" style="margin-bottom:12px;">Stats</p>
+            <div class="stat-bars" id="d-bars">
+              <!-- filled by JS -->
+            </div>
+          </div>
+
+          <!-- Download -->
+          <button class="btn-download" id="d-download" disabled>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M6.5 1v8M3 7l3.5 3.5L10 7M1 12h11"
+                    stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download card (PDF)
+          </button>
+
+        </div><!-- /.card-wrap -->
+
+        <!-- Right: editorial -->
+        <div class="detail-col">
+
+          <div>
+            <p class="detail-kicker" id="d-kicker">—</p>
+            <h2 class="detail-name">
+              <em id="d-name-first">—</em>
+              <span id="d-name-last">—</span>
+            </h2>
+            <p class="detail-tagline" id="d-tagline">—</p>
+          </div>
+
+          <div class="detail-meta">
+            <div class="meta-item"><strong id="d-pos-full">—</strong>Position</div>
+            <div class="meta-item"><strong id="d-nat">—</strong>Country</div>
+            <div class="meta-item"><strong id="d-era">—</strong>Active</div>
+            <div class="meta-item"><strong id="d-disc">—</strong>Field</div>
+          </div>
+
+          <p class="detail-desc" id="d-desc">—</p>
+
+          <blockquote class="detail-quote">
+            "<span id="d-quote">—</span>"
+            <cite id="d-cite">—</cite>
+          </blockquote>
+
+          <!-- Spots: slider + map -->
+          <div>
+            <p class="map-section-label">Street Drops — Madrid & Beyond</p>
+
+            <div class="spots-widget" id="spots-widget">
+              <!-- Left: photo slider -->
+              <div class="spots-slider" id="spots-slider">
+                <!-- slides injected by JS -->
+                <div class="spots-nav">
+                  <button class="spots-nav-btn" id="spots-prev" onclick="slideSpot(-1)">←</button>
+                  <span class="spots-counter" id="spots-counter">1 / 1</span>
+                  <button class="spots-nav-btn" id="spots-next" onclick="slideSpot(1)">→</button>
+                </div>
+              </div>
+
+              <!-- Right: Leaflet map -->
+              <div class="spots-map-col">
+                <div id="player-map"></div>
+              </div>
+            </div>
+
+            <!-- Dot indicators -->
+            <div class="spots-dots" id="spots-dots"></div>
+          </div>
+
+          <!-- Player nav -->
+          <div class="player-nav">
+            <button class="player-nav-btn" id="d-prev">
+              ← Prev
+              <strong id="d-prev-name">—</strong>
+            </button>
+            <button class="player-nav-btn right" id="d-next">
+              Next →
+              <strong id="d-next-name">—</strong>
+            </button>
+          </div>
+
+        </div><!-- /.detail-col -->
+      </div><!-- /.detail-grid -->
+    </div><!-- /#detail-wrap -->
+
+  </div><!-- /.container -->
+</div><!-- /#page-roster -->
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT PAGE
+     ══════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="container">
+    <div class="about-wrap">
+
+      <h2 class="about-intro-lede">No one plays with a libero anymore.<br>Not since Aristotle did.</h2>
+
+      <p>philosoFIFA is an ongoing art project that places thinkers, artists and cultural theorists into football card format — assigning them positions, stats and clubs based on their style, method and historical context… and, to some extent, intuition.</p>
+
+      <p>The project exists on two levels: as an archive and as a presence in the street.</p>
+
+      <p>Stats are fictional and poetic, not academic.<br>It is a game, an essay, and a joke at the same time.</p>
+
+      <hr class="about-rule">
+
+      <p class="label" style="color:var(--green);margin-bottom:8px;">Download</p>
+      <p>Cards can be downloaded from each player page.<br>Personal use only. Non-commercial.</p>
+
+      <hr class="about-rule">
+
+      <p class="label" style="color:var(--green);margin-bottom:8px;">Street Drops</p>
+      <p>Stickers mainly in Madrid, with some appearing in other parts of Spain and Europe.</p>
+      <p>If they show up in your city, that's part of the project.<br>Documented sightings are always welcome.</p>
+
+      <div class="about-contact">
+        <a class="about-contact-link" href="https://www.instagram.com/philosofifa/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+        <a class="about-contact-link" href="https://t.me/negatocionista" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 5L2 12.5l7 1M21 5l-5 15-4.5-5.5M21 5L9 13.5m0 0V19l3-3"/>
+          </svg>
+          Telegram
+        </a>
+        <a class="about-contact-link" href="mailto:negatocionista@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 7l10 7 10-7"/>
+          </svg>
+          Email
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div><!-- /#page-about -->
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-credit"><span class="green">philoso</span>FIFA</span>
+      <span class="footer-phrase">Stickers, ideas & contradictions.</span>
+    </div>
+    <div class="footer-legal">
+      Non-commercial artistic project.<br>
+      For cultural use only. CC BY-NC 4.0
+    </div>
+  </div>
+</footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- App JS -->
+<script src="js/app.js"></script>
+
+</body>
+</html>

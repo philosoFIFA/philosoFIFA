@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "firstName": "Nick",
+    "lastName": "Land",
+    "years": "1962–present",
+    "discipline": "Philosophy",
+    "pos": "RW",
+    "posFull": "Right Wing",
+    "nationality": "GB",
+    "era": "1962–present",
+    "club": "Leeds United F.C.",
+    "ovr": 80,
+    "stats": { "PAC": 88, "SHO": 75, "PAS": 74, "DRI": 83, "DEF": 45, "PHY": 69 },
+    "tagline": "Accelerationist winger. Outside the system, ahead of it.",
+    "description": "He doesn’t build the play. He accelerates it until it breaks.\nHis crosses behave like performative ideas — they produce what they announce.\nHe takes on his man again and again, caught in an infinite loop.",
+    "quote": "The only way forward is through, which means further in.",
+    "image": "images/players/01_miniatura_nick land.png",
+    "pdf": "pdfs/01_nick land.pdf",
+    "spots": [
+      {
+        "lat": 40.4389203, "lng": -3.717433,
+        "label": "Chamberí — Plaza de Cristo Rey",
+        "note": "urban infrastructure · street level",
+        "photo": "images/spots/01_nick land_spot01.jpg"
+      },
+      {
+        "lat": 40.471100, "lng": -3.686431,
+        "label": "Chamartín — Calle de José Vasconcelos",
+        "note": "postal system · street level",
+        "photo": "images/spots/01_nick land_spot02.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "flag": "🇫🇷",
+    "firstName": "Albert",
+    "lastName": "Camus",
+    "years": "1913–1960",
+    "discipline": "Philosophy",
+    "pos": "GK",
+    "posFull": "Goalkeeper",
+    "nationality": "FR",
+    "era": "1913–1960",
+    "club": "Olympique de Marseille",
+    "ovr": 83,
+    "stats": { "PAC": 84, "SHO": 79, "PAS": 73, "DRI": 86, "DEF": 50, "PHY": 80 },
+    "tagline": "Absurd goalkeeper. He saves without hope, and plays anyway.",
+    "description": "The last man between the posts.\nBetween the shot and the goal, like Sisyphus, he chooses to resist.\nEvery save feels slightly ridiculous.",
+    "quote": "Sometimes, just continuing, simply going on, becomes superhuman.",
+    "image": "images/players/02_miniatura_albert camus.png",
+    "pdf": "pdfs/02_albert camus.pdf",
+    "spots": [
+      {
+        "lat": 40.424432, "lng": -3.695362,
+        "label": "Centro — Calle Fernando VI",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/02_albert camus_spot01.jpg"
+      },
+      {
+        "lat": 48.864077, "lng": 2.301293,
+        "label": "Paris — Pont de l'Alma",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/02_albert camus_spot02.jpg"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "flag": "🇮🇹",
+    "firstName": "",
+    "lastName": "Marcvs Avrelivs",
+    "years": "121–180",
+    "discipline": "Philosophy",
+    "pos": "CM",
+    "posFull": "Central Midfielder",
+    "nationality": "IT",
+    "era": "121–180",
+    "club": "AS Roma",
+    "ovr": 89,
+    "stats": { "PAC": 72, "SHO": 80, "PAS": 86, "DRI": 90, "DEF": 75, "PHY": 70 },
+    "tagline": "Emperor of the midfield. Stoic by position, Roman by nature.",
+    "description": "He does not chase the ball. He receives it, accepts it, and returns it.\nHis movement is circular, patient, inevitable — like thought itself.\nFootball is a preferred indifferent.",
+    "quote": "Starting is half the work. Start again with the remaining half, and you will have finished.",
+    "image": "images/players/03_miniatura_marcvs avrelivs.png",
+    "pdf": "pdfs/03_marcvs avrelivs.pdf",
+    "spots": [
+      {
+        "lat": 40.457237, "lng": -3.71145887,
+        "label": "Tetuán — Glorieta de Rocío Durcal",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/03_marcvs avrelivs_spot01.jpg"
+      },
+      {
+        "lat": 40.465443, "lng": -3.689602,
+        "label": "Chamartín — Plaza de Castilla",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/03_marcvs avrelivs_spot02.jpg"
+      }
+    ]
+  }
+]
