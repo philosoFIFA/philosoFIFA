@@ -1032,3 +1032,31 @@ img { display: block; max-width: 100%; }
   }
   .footer-legal { text-align: left !important; }
 }
+
+/* ── Móvil v3 ────────────────────────────────────────── */
+@media (max-width: 560px) {
+
+  /* Foto 1080x1350 (4:5): la columna foto se amplía para ver más */
+  .spots-widget {
+    grid-template-columns: 180px 1fr !important;
+    height: 225px !important;  /* 180 * 5/4 = 225 — ratio exacto */
+  }
+
+  .spots-slider { height: 225px !important; }
+  .spots-map-col { height: 225px !important; }
+
+  .spot-photo {
+    width: 180px !important;
+    height: 225px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  /* Quitar botones +/- del mapa en móvil */
+  .leaflet-control-zoom { display: none !important; }
+
+  /* Footer: asegurar padding igual que container */
+  .footer-inner {
+    padding: 14px 14px !important;
+  }
+}
