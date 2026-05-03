@@ -174,8 +174,8 @@ function openPlayer(id) {
   if(prev) document.getElementById('d-prev-name').textContent = `${prev.firstName} ${prev.lastName}`;
   if(next) document.getElementById('d-next-name').textContent = `${next.firstName} ${next.lastName}`;
 
-  prevBtn.onclick = () => openPlayer(prev.id);
-  nextBtn.onclick = () => openPlayer(next.id);
+  prevBtn.onclick = () => { openPlayer(prev.id); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  nextBtn.onclick = () => { openPlayer(next.id); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
   // Show detail
   document.getElementById('detail-wrap').style.display  = 'block';
