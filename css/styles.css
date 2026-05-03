@@ -986,3 +986,49 @@ img { display: block; max-width: 100%; }
   .about-contact-link { justify-content: center; }
 }
 
+/* ── Responsive: móvil v2 (overrides) ───────────────── */
+@media (max-width: 560px) {
+
+  /* Tabla: ocultar también PAC (col 7), mostrar nombre completo */
+  .roster-table th:nth-child(7),
+  .roster-table td:nth-child(7) { display: none; }
+  .td-name .first { display: inline !important; }
+
+  /* Bandera más grande en ficha */
+  .card-flag { font-size: 28px !important; }
+
+  /* Mapa: horizontal, foto a la izquierda ocupando todo el alto */
+  .spots-widget {
+    grid-template-columns: 120px 1fr !important;
+    grid-template-rows: none !important;
+    height: 240px !important;
+  }
+
+  .spots-slider {
+    height: 240px !important;
+    border-right: 0.5px solid var(--rule) !important;
+    border-bottom: none !important;
+  }
+
+  .spot-photo {
+    height: 100% !important;
+    object-position: center top !important;
+  }
+
+  /* Ocultar texto de ubicación en móvil horizontal (no hay espacio) */
+  .spot-meta { display: none !important; }
+
+  .spots-nav { padding: 6px !important; }
+  .spots-nav-btn { width: 24px !important; height: 24px !important; font-size: 10px !important; }
+  .spots-counter { font-size: 9px !important; padding: 2px 5px !important; }
+  .spots-map-col { height: 240px !important; }
+
+  /* Footer alineado a la izquierda */
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    padding: 14px 14px !important;
+  }
+  .footer-legal { text-align: left !important; }
+}
