@@ -1060,3 +1060,13 @@ img { display: block; max-width: 100%; }
     padding: 14px 14px !important;
   }
 }
+
+/* ── Footer móvil: alineado a la derecha ─────────────── */
+@media (max-width: 560px) {
+  .footer-inner {
+    align-items: flex-end !important;
+    text-align: right !important;
+  }
+  .footer-left { align-items: flex-end !important; }
+  .footer-legal { text-align: right !important; }
+}
