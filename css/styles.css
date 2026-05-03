@@ -874,15 +874,115 @@ img { display: block; max-width: 100%; }
 }
 
 /* ── Responsive ──────────────────────────────────────── */
+/* ── Responsive: tablet ──────────────────────────────── */
 @media (max-width: 800px) {
   .detail-grid { grid-template-columns: 1fr; gap: 28px; }
   .search-input { width: 100%; }
   .roster-head { align-items: flex-start; flex-direction: column; }
+
+  /* Mapa: apilar foto encima del mapa en vertical */
+  .spots-widget {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 260px;
+    height: auto;
+  }
+
+  .spots-slider {
+    border-right: none;
+    border-bottom: 0.5px solid var(--rule);
+    height: 300px;  /* foto 4:5 aprox en ancho tablet */
+  }
+
+  .spots-map-col {
+    height: 260px;
+  }
+
+  .detail-meta { gap: 16px; }
 }
 
+/* ── Responsive: móvil ───────────────────────────────── */
 @media (max-width: 560px) {
-  .container { padding: 0 16px; }
-  .header-inner { padding: 14px 16px 0; }
-  .site-footer { padding: 14px 16px; }
+  .container { padding: 0 14px; }
+  .header-inner { padding: 12px 14px 0; }
+  .site-footer { padding: 14px 14px; }
   .detail-grid { padding-bottom: 40px; }
+
+  /* Logo más pequeño */
+  .logo { font-size: 15px; }
+  .logo-tagline { font-size: 10px; }
+  .nav-link { font-size: 10px; padding: 0 0 14px 16px; }
+
+  /* Tabla móvil: ocultar columnas menos importantes */
+  .roster-table th:nth-child(3),   /* years */
+  .roster-table td:nth-child(3),
+  .roster-table th:nth-child(4),   /* discipline */
+  .roster-table td:nth-child(4),
+  .roster-table th:nth-child(8),   /* SHO */
+  .roster-table td:nth-child(8),
+  .roster-table th:nth-child(9),   /* PAS */
+  .roster-table td:nth-child(9),
+  .roster-table th:nth-child(10),  /* DRI */
+  .roster-table td:nth-child(10),
+  .roster-table th:nth-child(11),  /* DEF */
+  .roster-table td:nth-child(11),
+  .roster-table th:nth-child(12),  /* PHY */
+  .roster-table td:nth-child(12),
+  .roster-table th:nth-child(13),  /* arrow */
+  .roster-table td:nth-child(13) {
+    display: none;
+  }
+
+  /* Nombre del jugador visible y bien */
+  .roster-table td { padding: 10px 6px; font-size: 13px; }
+  .roster-table th { padding: 6px 6px 8px; font-size: 9px; }
+  .td-name .first { display: none; } /* solo apellido en móvil */
+
+  /* Buscador */
+  .search-input { font-size: 13px; padding: 10px 12px; }
+
+  /* Cabecera de sección */
+  .roster-title { font-size: 20px; }
+
+  /* Carta del jugador */
+  .player-card { padding: 14px 12px; }
+  .card-ovr { font-size: 34px; }
+  .card-image { height: 240px; }
+
+  /* Nombre editorial */
+  .detail-name { font-size: 28px; }
+  .detail-tagline { font-size: 13px; }
+  .detail-desc { font-size: 13px; max-width: 100%; }
+  .detail-quote { font-size: 13px; }
+
+  /* Meta en columnas */
+  .detail-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* Mapa móvil */
+  .spots-widget {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 220px;
+    height: auto;
+  }
+
+  .spots-slider { height: 280px; }
+  .spots-map-col { height: 220px; }
+
+  /* Nav prev/next */
+  .player-nav { flex-direction: column; gap: 12px; }
+  .player-nav-btn.right { text-align: left; }
+
+  /* Footer móvil */
+  .footer-inner { flex-direction: column; gap: 8px; }
+  .footer-legal { text-align: left; }
+
+  /* About */
+  .about-wrap { padding: 24px 0 40px; }
+  .about-intro-lede { font-size: 14px; }
+  .about-contact { flex-direction: column; }
+  .about-contact-link { justify-content: center; }
 }
+
