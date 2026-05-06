@@ -100,5 +100,33 @@
         "photo": "images/spots/03_marcvs avrelivs_spot02.jpg"
       }
     ]
+  },
+  {
+    "id": "4",
+    "flag": "🇫🇷",
+    "firstName": "Michel",
+    "lastName": "Foucault",
+    "years": "1926–1984",
+    "discipline": "Philosophy",
+    "pos": "CM",
+    "posFull": "Center Attacking Midfielder",
+    "nationality": "FR",
+    "era": "1926–1984",
+    "club": "Paris Saint Germain",
+    "ovr": 84,
+    "stats": { "PAC": 81, "SHO": 81, "PAS": 81, "DRI": 86, "DEF": 60, "PHY": 67 },
+    "tagline": "Not just between the lines, inside the system.",
+    "description": "A master of invisible systems, he dictates the tempo like a structure you can’t see but can’t escape.\nThe pitch becomes a field of surveillance, every movement observed, anticipated, absorbed.\nPower is everywhere, and in his game, it always circulates through him.",
+    "quote": "Where there is power, there is resistance.",
+    "image": "images/players/04_miniatura_michel foucault.png",
+    "pdf": "pdfs/04_michel foucault.pdf",
+    "spots": [
+      {
+        "lat": 40.465733, "lng": -3.689940,
+        "label": "Chamartín — Plaza de Castilla",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/04_michel foucault_spot01.jpg"
+      }
+    ]
   }
 ]
