@@ -296,7 +296,7 @@ function initLeaflet(spots) {
     attributionControl: true,
   });
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a>',
     maxZoom: 19,
   }).addTo(leafMap);

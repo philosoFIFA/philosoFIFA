@@ -126,7 +126,13 @@
         "label": "Chamartín — Plaza de Castilla",
         "note": "traffic sign · street level",
         "photo": "images/spots/04_michel foucault_spot01.jpg"
-      }
+      },
+      {
+        "lat": 40.446843, "lng": -3.703267,
+        "label": "Tetuán — Glorieta de Cuatro Caminos",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/04_michel foucault_spot02.jpg"
+      },
     ]
   }
 ]
