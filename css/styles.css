@@ -1070,3 +1070,23 @@ img { display: block; max-width: 100%; }
   .footer-left { align-items: flex-end !important; }
   .footer-legal { text-align: right !important; }
 }
+
+/* ── Móvil: popup y atribución leaflet ───────────────── */
+@media (max-width: 560px) {
+
+  /* Popup más pequeño */
+  .leaflet-popup-content-wrapper {
+    font-size: 11px !important;
+  }
+  .leaflet-popup-content {
+    font-size: 10px !important;
+    margin: 6px 10px !important;
+  }
+
+  /* Atribución "Leaflet | © OSM" más pequeña */
+  .leaflet-control-attribution {
+    font-size: 8px !important;
+    padding: 1px 4px !important;
+    opacity: 0.6;
+  }
+}
