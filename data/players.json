@@ -132,6 +132,12 @@
         "label": "Tetuán — Glorieta de Cuatro Caminos",
         "note": "traffic sign · street level",
         "photo": "images/spots/04_michel foucault_spot02.jpg"
+      },
+      {
+        "lat": 40.419060, "lng": -3.697647,
+        "label": "Centro — Gran Vía",
+        "note": "traffic sign · street level",
+        "photo": "images/spots/04_michel foucault_spot03.jpg"
       }
     ]
   }
