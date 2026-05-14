@@ -98,6 +98,12 @@
         "label": "Chamartín — Plaza de Castilla",
         "note": "traffic sign · street level",
         "photo": "images/spots/03_marcvs avrelivs_spot02.jpg"
+      },
+      {
+        "lat": 40.427550, "lng": -3.695796,
+        "label": "Chamberí — Plaza de Santa Bárbara",
+        "note": "street planter · street level",
+        "photo": "images/spots/03_marcvs avrelivs_spot03.jpg"
       }
     ]
   },
